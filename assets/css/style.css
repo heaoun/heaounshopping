@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* menu (index.html)*/
+.menu li{
+    transition: all 0.3s linear;
+}
+.menu li:hover{
+    color: #144194;
+}
+.menu li .sub-menu li{
+    transition: all 0.3s linear;
+}
+.menu li .sub-menu li:hover{
+    color: #144194;
+}
+.menu li:hover .sub-menu{
+    display: grid;
+    animation: slideDown 0.3s ease-out;
+}
+@keyframes slideDown{
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* main slide (index.html)*/
+.main-slide .slide{
+    width: 100%;
+    /* height: 500px; */
+    overflow: hidden;
+}
+.slide .itemSlide{
+    width: 100%;
+    height: 100%;
+    /* background-color: black; */
+    /* margin-top: 1%; */
+    border-radius: 8px;
+}
+.itemSlide .wrapperSlide{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    /* border-radius: 10px; */
+}
+/* .itemSlide .wrapperSlide .item{
+    width: 100%;
+    height: 100%;
+    position: relative;
+} */
+.itemSlide .wrapperSlide .imageslide{
+    width: 100%;
+    height: 100%;
+}
+.itemSlide .wrapperSlide .imageslide img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.itemSlide .wrapperSlide  .tbnSlideBack{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 30px; */
+    color: #FFF;
+    border-radius: 50%;
+    transition: .2s ease;
+    top: 50%;
+    left: -66px;
+    transform: translateY(-50%);
+}
+.itemSlide .wrapperSlide:hover .tbnSlideBack{
+    left: 5px;
+}
+.itemSlide .wrapperSlide .tbnSlideNext{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 30px; */
+    color: #FFF;
+    border-radius: 50%;
+    transition: .2s ease;
+    top: 50%;
+    right: -66px;
+    transform: translateY(-50%);
+}
+.itemSlide .wrapperSlide:hover .tbnSlideNext{
+    right: 5px;
+}
+.itemSlide .wrapperSlide .tbnSlideBack:hover{
+    /* background-color: #EBF400; */
+    box-shadow: 1px 2px 2px gray;
+    color: black;
+    cursor: pointer;
+}
+.itemSlide .wrapperSlide .tbnSlideNext:hover{
+    /* background-color: #EBF400; */
+    box-shadow: 1px 2px 2px gray;
+    color: black;
+    cursor: pointer;
+}
+
+/* featured-product (index.html)*/
+.product-box .box{
+    transition: all 0.3s linear;
+}
+.product-box .box:hover{
+    scale: 1.05;
+}
+.product-box .box .line::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    /* width: 100%; */
+    background-color: #144194;
+    transition: transform 300ms ease-in-out;
+    transform: scaleX(0);
+    opacity: 0.85;
+}
+.product-box .box:hover .line::before,
+.product-box .box:focus .line::before
+{
+    transform: scaleX(1);
+}
+.product-box .box button{
+    transition: all 0.3s linear;
+}
+.product-box .box button:hover{
+    background-color: #144194;
+    color: #fff;
+    opacity: 0.85;
+}
+/* end of featured-product (index.html)*/
+
+/* new-arrival (index.html)*/
+.new-arrival ul li{
+    cursor: pointer;
+}
+.new-arrival ul li.active{
+    color: black;
+    opacity: 0.85;
+    border: 1px solid #b2babb ;
+}
+.new-arrival .box a .tittle{
+    transition: all 0.5s linear;
+
+} 
+.new-arrival .box:hover a .tittle{
+    transform: translateY(-20px);
+
+} 
+.new-arrival .box a .tittle{
+    transition: all 0.5s linear;
+
+} 
+.new-arrival .box:hover a .tittle{
+    transform: translateY(-20px);
+
+} 
+.new-arrival .box .tittle .name-pro{
+    transition: all 0.3s linear;
+}
+.new-arrival .box .tittle .name-pro:hover{
+    color: chocolate;
+}
+/* end of new-arrival (index.html)*/
+.new-arrival .page.active{
+    display: grid;
+}
+
+/* pagination (products.html)*/
+.pagination ul li:nth-child(2) a{
+    background-color: #3b82f6;
+    color: #fff;
+}
+
+/* menu-responsive */
+#menu{
+    display: none;
+}
+
+#menu .sub-menu {
+    display: none;
+}
+
+/* box shadow of product box */
+.box-shadow-custom{
+    box-shadow: 9px 0px 20px -15px rgba(102.60631793478261, 129.95849918589025, 255, 0.35);
+}
+
+/* table of product-cart */
+table {
+    width: 100%;
+    margin: 0px auto;
+    /* border-collapse: collapse; */
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+td img {
+    width: 70px;
+    height: auto;
+}
+
+

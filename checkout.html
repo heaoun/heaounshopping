@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website</title>
+    <!-- tailwind css link cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome link cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <!-- css style link cdn -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- css bubble swiper link -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- google font link cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <div
+            class="top-header w-[100%] bg-[#144194] hidden sm:flex justify-between px-5 py-2 font-[Hanuman,Sans-serif] text-[#fff] sticky top-0">
+            <div class="flex space-x-5 items-center">
+                <div class="phone-contact flex items-center space-x-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>0963904112</p>
+                </div>
+
+                <div class="email-contact flex items-center space-x-2">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>mrounit83@gmail.com</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fa-brands fa-telegram"></i>
+                <p>chat on telegram</p>
+            </div>
+        </div>
+        <!-- end of top header -->
+    </header>
+
+    <div
+        class="bottom-header flex justify-between items-center px-5 py-1 sticky top-0 lg:static bg-[#fff] z-40 shadow-sm">
+        <div class="left">
+            <div class="logo w-[150px]">
+                <a href="#"><img src="https://soklyphone.com/storage/image-2022-07-02-164325-1656755040dyQxA.jpg"
+                        alt=""></a>
+            </div>
+        </div>
+
+        <div class="right hidden lg:flex items-center space-x-5">
+            <button class="search-box w-[500px] flex items-center space-x-2 border rounded-full p-2 text-lg font-medium"
+                style="border: 3px solid #144194;">
+                <input type="text" placeholder="Search for product..." class="w-full h-fit outline-none">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="shopping-cart text-[#144194] text-xl relative">
+                <i class="fa-solid fa-bag-shopping">
+                    <div
+                        class="cart-number bg-red-500 w-[20px] h-[20px] rounded-full absolute top-[-3px] left-3 text-white text-[15px] flex justify-center items-center p-2">
+                        1</div>
+                </i>
+            </button>
+            <button class="cus-account text-[#144194] text-xl">
+                <a href="account.html"><i class="fa-solid fa-user"></i></a>
+            </button>
+        </div>
+
+        <div
+            class="right-responsive flex lg:hidden items-center space-x-5 text-[20px] sm:text-[25px] md:text-2xl lg:text-2xl xl:text-5xl 2xl:text-2xl font-mono">
+            <button class="shopping-cart text-[#144194] relative">
+                <i class="fa-solid fa-bag-shopping">
+                    <div
+                        class="cart-number bg-red-500 w-[20px] h-[20px] rounded-full absolute top-[-3px] left-3 text-white text-[15px] flex justify-center items-center p-2">
+                        1</div>
+                </i>
+            </button>
+            <button class="cus-account text-[#144194]">
+                <a href="account.html"><i class="fa-solid fa-user"></i></a>
+            </button>
+            <button class="search text-[#144194]" onclick="toggleSearchBox()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="menu-bar text-[#144194]">
+                <i class="fa-solid fa-bars" id="btnMenu"></i>
+            </button>
+        </div>
+    </div>
+    <!-- end of bottom header -->
+
+    <nav class="px-5 py-0 lg:py-3 shadow-sm sticky top-0 bg-[#fff] z-40">
+        <!-- menu -->
+        <ul
+            class="menu font-[Montserrat,hanuman,Sans-serif] font-bold text-md text-gray-800 hidden lg:flex justify-center items-center space-x-10 relative z-10">
+            <li class="text-[#144194]"><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#">Brand <i class="fa-solid fa-angle-down"></i></a>
+                <!-- sub-menu -->
+                <ul
+                    class="sub-menu absolute grid-cols-2 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 font-medium">
+                    <li><a href="products.html">Apple</a></li>
+                    <li><a href="#">Samsung</a></li>
+                    <li><a href="#">Oppo</a></li>
+                    <li><a href="#">Vivo</a></li>
+                    <li><a href="#">Anker</a></li>
+                    <li><a href="#">Jbl</a></li>
+                    <li><a href="#">Microsoft</a></li>
+                    <li><a href="#">Nokia</a></li>
+                    <li><a href="#">Nubia</a></li>
+                    <li><a href="#">Oneplus</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Computer <i class="fa-solid fa-angle-down"></i></a>
+                <!-- sub-menu -->
+                <ul
+                    class="sub-menu absolute grid-cols-1 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 font-medium">
+                    <li><a href="#">Macbook</a></li>
+                    <li><a href="#">Huawei Laptop</a></li>
+                    <li><a href="#">Micfrosoft surface</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Smartphone <i class="fa-solid fa-angle-down"></i></a>
+                <!-- sub-menu -->
+                <ul
+                    class="sub-menu absolute grid-cols-2 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 font-medium">
+                    <li><a href="#">Apple</a></li>
+                    <li><a href="#">Samsung</a></li>
+                    <li><a href="#">Nothing</a></li>
+                    <li><a href="#">Oppo</a></li>
+                    <li><a href="#">Vivo</a></li>
+                    <li><a href="#">Xoami</a></li>
+                    <li><a href="#">Huawei</a></li>
+                    <li><a href="#">Hornor</a></li>
+                    <li><a href="#">Realme</a></li>
+                    <li><a href="#">Techno</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Tablet <i class="fa-solid fa-angle-down"></i></i></a>
+                <!-- sub-menu -->
+                <ul
+                    class="sub-menu absolute grid-cols-1 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 font-medium">
+                    <li><a href="#">Ipad</a></li>
+                    <li><a href="#">Galaxy Tab</a></li>
+                    <li><a href="#">Huawei Tablet</a></li>
+                    <li><a href="#">Xoami Tablet</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Watch <i class="fa-solid fa-angle-down"></i></a>
+                <!-- sub-menu -->
+                <ul
+                    class="sub-menu absolute grid-cols-2 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 font-medium">
+                    <li><a href="#">Apple Watch</a></li>
+                    <li><a href="#">Samsung Watch</a></li>
+                    <li><a href="#">Huawei Watch</a></li>
+                    <li><a href="#">Xoami Watch</a></li>
+                    <li><a href="#">Google Watch</a></li>
+                    <li><a href="#">Amazfit Watch</a></li>
+                    <li><a href="#">Oppo Watch</a></li>
+                    <li><a href="#">Nokia</a></li>
+                    <li><a href="#">Nubia</a></li>
+                    <li><a href="#">Oneplus</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Accessories <i class="fa-solid fa-angle-down"></i></a>
+                <!-- sub-menu -->
+                <ul
+                    class="sub-menu absolute grid-cols-2 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 font-medium">
+                    <li><a href="#">Ipad & Tablet case</a></li>
+                    <li><a href="#">Phone case</a></li>
+                    <li><a href="#">Other Case</a></li>
+                    <li><a href="#">Car Charger</a></li>
+                    <li><a href="#">Ear Phone</a></li>
+                    <li><a href="#">Headphone</a></li>
+                    <li><a href="#">Speaker</a></li>
+                    <li><a href="#">Bluetooth Wireless</a></li>
+                    <li><a href="#">Adapter & Cable</a></li>
+                    <li><a href="#">Powerbank & Battery</a></li>
+                </ul>
+            </li>
+            <li><a href="#">2nd Hand <i class="fa-solid fa-angle-down"></i></a>
+                <!-- sub-menu -->
+                <ul
+                    class="sub-menu absolute grid-cols-2 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 right-5 xl:right-0 font-medium">
+                    <li><a href="#">Used Iphone</a></li>
+                    <li><a href="#">Used Samsung</a></li>
+                    <li><a href="#">Used Oppo</a></li>
+                    <li><a href="#">Used Vivo</a></li>
+                    <li><a href="#">Used Anker</a></li>
+                    <li><a href="#">Used Jbl</a></li>
+                    <li><a href="#">Used Microsoft</a></li>
+                    <li><a href="#">Used Nokia</a></li>
+                    <li><a href="#">Used Nubia</a></li>
+                    <li><a href="#">Used Oneplus</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- responsive-navbar -->
+    <nav class="block lg:hidden">
+        <ul class="menu w-full flex md:hidden justify-center flex-col space-y-3 shadow-xl p-3 left-0 font-[Montserrat,hanuman,Sans-serif] font-medium text-md text-gray-700 bg-white absolute z-30 border-t-2"
+            id="menu">
+            <li class="w-full"><a href="#">Home</a></li>
+            <li id="btnSubMenu1"><a href="#">Brand</a> <i class="fa-solid fa-angle-down"></i>
+                <ul class="sub-menu  grid-cols-2 bg-gray-200 gap-3 text-gray-800 w-full p-3 grid bg-opacity-50 text-sm"
+                    id="sub-menu1">
+                    <li><a href="products.html">Apple</a></li>
+                    <li><a href="#">Jbl</a></li>
+                    <li><a href="#">Samsung</a></li>
+                    <li><a href="#">microsoft</a></li>
+                    <li><a href="#">Oppo</a></li>
+                    <li><a href="#">Vivo</a></li>
+                    <li><a href="#">Nokia</a></li>
+                    <li><a href="#">Asus</a></li>
+                    <li><a href="#">sony</a></li>
+                    <li><a href="#">Techno</a></li>
+                    <li><a href="#">hornor</a></li>
+                    <li><a href="#">infinix</a></li>
+                </ul>
+            </li>
+            <li id="btnSubMenu2"><a href="#">Computer</a> <i class="fa-solid fa-angle-down"></i>
+                <ul class="sub-menu  grid-cols-1 bg-gray-200 gap-3 text-gray-800 w-full p-3 grid bg-opacity-50 text-sm"
+                    id="sub-menu2">
+                    <li><a href="#">Macbook</a></li>
+                    <li><a href="#">Huawei Laptop</a></li>
+                    <li><a href="#">Micosoft Surface</a></li>
+                </ul>
+            </li>
+            <li id="btnSubMenu3"><a href="#">Smartphone</a> <i class="fa-solid fa-angle-down"></i>
+                <ul class="sub-menu  grid-cols-2 bg-gray-200 gap-3 text-gray-800 w-full p-3 grid bg-opacity-50 text-sm"
+                    id="sub-menu3">
+                    <li><a href="#">Apple</a></li>
+                    <li><a href="#">Jbl</a></li>
+                    <li><a href="#">Samsung</a></li>
+                    <li><a href="#">microsoft</a></li>
+                    <li><a href="#">Oppo</a></li>
+                    <li><a href="#">Vivo</a></li>
+                    <li><a href="#">Nokia</a></li>
+                    <li><a href="#">Asus</a></li>
+                    <li><a href="#">sony</a></li>
+                    <li><a href="#">Techno</a></li>
+                    <li><a href="#">hornor</a></li>
+                    <li><a href="#">infinix</a></li>
+                </ul>
+            </li>
+            <li id="btnSubMenu4"><a href="#">Tablet</a> <i class="fa-solid fa-angle-down"></i>
+                <ul class="sub-menu grid-cols-1 bg-gray-200 gap-3 text-gray-800 w-full p-3 grid bg-opacity-50 text-sm"
+                    id="sub-menu4">
+                    <li><a href="#">iPad</a></li>
+                    <li><a href="#">Galaxy Tabs</a></li>
+                    <li><a href="#">Huawei Tablets</a></li>
+                    <li><a href="#">Xiaomi Tablet</a></li>
+                </ul>
+            </li>
+            <li id="btnSubMenu5"><a href="#">Watch</a> <i class="fa-solid fa-angle-down"></i>
+                <ul class="sub-menu grid-cols-1 bg-gray-200 gap-3 text-gray-800 w-full p-3 grid bg-opacity-50 text-sm"
+                    id="sub-menu5">
+                    <li><a href="#">Apple Watch</a></li>
+                    <li><a href="#">Samsung Watch</a></li>
+                    <li><a href="#">Huawei Watch</a></li>
+                    <li><a href="#">Xoami Watch</a></li>
+                    <li><a href="#">Google Watch</a></li>
+                    <li><a href="#">Amazfit Watch</a></li>
+                    <li><a href="#">Oppo Watch</a></li>
+                </ul>
+            </li>
+            <li id="btnSubMenu6"><a href="#">Accessories</a> <i class="fa-solid fa-angle-down"></i>
+                <ul class="sub-menu grid-cols-2 bg-gray-200 gap-3 text-gray-800 w-full p-3 grid bg-opacity-50 text-sm"
+                    id="sub-menu6">
+                    <li><a href="#">Ipad & Tablet case</a></li>
+                    <li><a href="#">Phone case</a></li>
+                    <li><a href="#">Other Case</a></li>
+                    <li><a href="#">Car Charger</a></li>
+                    <li><a href="#">Ear Phone</a></li>
+                    <li><a href="#">Headphone</a></li>
+                    <li><a href="#">Speaker</a></li>
+                    <li><a href="#">Bluetooth Wireless</a></li>
+                    <li><a href="#">Adapter & Cable</a></li>
+                    <li><a href="#">Powerbank & Battery</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- end of responsive-navbar -->
+    <!-- end of header -->
+
+    <!-- shopping-checkout-block -->
+    <div class="shopping-checkout-block w-full p-3 sm:p-5 mt-10">
+        <div class="head">
+            <h1
+                class="font-bold font-[Montserrat,hanuman,Sans-serif] text-[23px] sm:text-3xl text-[#2e3192] shadow-black">
+                CheckOut</h1>
+            <div class="line w-full h-[2px] bg-[#144194] mt-3"></div>
+        </div>
+
+        <div class="cart-block w-full mt-5">
+
+            <!-- cart-box-noresponsive -->
+            <div class="w-full flex flex-col lg:flex-row justify-between">
+                <div class="chechout-box w-[100%] lg:w-[60%] border rounded-xl h-fit p-5">
+                    <!-- Checkout form -->
+                    <form action="" method="POST" class="w-full font-[Montserrat,hanuman,Sans-serif] font-semibold text-gray-700">
+                        <!-- Billing Information Section -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                          <div>
+                            <label for="first-name" class="block text-gray-700">First Name</label>
+                            <input type="text" id="first-name" name="first-name" class="mt-2 p-3 w-full border border-gray-300 rounded-md font-medium" placeholder="Yorn" required>
+                          </div>
+                          <div>
+                            <label for="last-name" class="block text-gray-700">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" class="mt-2 p-3 w-full border border-gray-300 rounded-md font-medium" placeholder="Sam oun" required>
+                          </div>
+                        </div>
+                    
+                        <div class="mb-8">
+                          <label for="email" class="block text-gray-700">Email Address</label>
+                          <input type="email" id="email" name="email" class="mt-2 p-3 w-full border border-gray-300 rounded-md font-medium" placeholder="mrounit83@gmail.com" required>
+                        </div>
+                    
+                        <div class="mb-8">
+                          <label for="address" class="block text-gray-700">Address</label>
+                          <input type="text" id="address" name="address" class="mt-2 p-3 w-full border border-gray-300 rounded-md font-medium" placeholder="123 Main Street" required>
+                        </div>
+                    
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                          <div>
+                            <label for="city" class="block text-gray-700">City</label>
+                            <input type="text" id="city" name="city" class="mt-2 p-3 w-full border border-gray-300 rounded-md font-medium" placeholder="Svay Rieng" required>
+                          </div>
+                          <div>
+                            <label for="zip" class="block text-gray-700">ZIP Code</label>
+                            <input type="text" id="zip" name="zip" class="mt-2 p-3 w-full border border-gray-300 rounded-md font-medium" placeholder="10001" required>
+                          </div>
+                        </div>
+                    
+                        <div class="mb-8">
+                          <label for="country" class="block text-gray-700">Country</label>
+                          <select id="country" name="country" class="mt-2 p-3 w-full border border-gray-300 rounded-md font-medium">
+                            <option value="cambodia">Cambodia</option>
+                            <option value="thailand">Thailand</option>
+                            <option value="china">china</option>
+                            <!-- Add more countries here -->
+                          </select>
+                        </div>
+                    
+                        <!-- Payment Section -->
+                        <h3 class="text-xl font-semibold mb-6 text-gray-800">Contact Information</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                          <div>
+                            <label for="phone-number" class="block text-gray-700">Phone Number</label>
+                            <input type="text" id="phone-number" name="phone-number" class="mt-2 p-3 w-full border border-gray-300 rounded-md font-medium" placeholder="0963904112" required>
+                          </div>
+                          <div>
+                            <label for="telegram-number" class="block text-gray-700">Telegram Number</label>
+                            <input type="text" id="telegram" name="telegram-number" class="mt-2 p-3 w-full border border-gray-300 rounded-md font-medium" placeholder="0963904112" required>
+                          </div>
+                        </div>
+
+            </div>
+
+            <!-- place-order -->
+            <div class="place-order w-[100%] lg:w-[38%] h-fit mt-5 lg:mt-0 font-semibold font-[Montserrat,hanuman,Sans-serif] p-5 border rounded-xl text-sm text-gray-700">
+                <div class="head">
+                    <h1>Your Orders</h1>
+                </div>
+                
+                <!-- order-table -->
+                <table border="1" class="w-full mt-3">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b-2">
+                            <td>iPhone 16 Plus - Non active  × 1</td>
+                            <td>$1,005</td>
+                        </tr>
+                        <tr class="border-b-2 mt-52">
+                            <td>iPhone 16 Plus - Non active  × 1</td>
+                            <td>$1,005</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="mt-10 space-y-3">
+                    <div class="sub-total flex justify-between">
+                        <div class="tittle">Sub Total</div>
+                        <div class="price">$2,314</div>
+                    </div>
+                    <div class="line w-full h-[2px] bg-blue-800"></div>
+                    <div class="total flex justify-between">
+                        <div class="tittle">Total</div>
+                        <div class="price">$2,314</div>
+                    </div>
+                </div>
+    
+                <button class="mt-10 bg-blue-500 text-white rounded-lg p-3 text-sm"><a href="#">Place Order</a></button>
+            </div>
+        </form>
+        </div>
+    
+        </div>
+    </div>
+    <!-- end of shopping-cart-block -->
+
+    <!-- footer -->
+    <footer>
+        <div
+            class="top-footer bg-[#144194] p-5 sm:p-10 w-[100%] mt-10 md:mt-20 flex-col md:flex-row flex justify-between items-start md:items-center space-y-3 md:space-y-0">
+            <div class="tittle space-y-3">
+                <h1
+                    class="font-bold font-[Montserrat,hanuman,Sans-serif] text-[23px] sm:text-3xl text-[#fff] shadow-black">
+                    Stay Updated With Our Latest Price & Offers!</h1>
+                <p
+                    class="font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] text-[#fff] font-medium">
+                    Be the first to know about our latest stock and price, like our Facebook page or join our telegram
+                    channel </p>
+            </div>
+            <div class="btn space-x-0 xl:space-x-2 space-y-3">
+                <button
+                    class="fb-btn text-gray-800 font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] font-medium bg-[#fff] rounded-full p-2"><i
+                        class="fa-brands fa-facebook"></i> Like Facebook</button>
+                <button
+                    class="tele-btn text-gray-800 font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] font-medium bg-[#fff] rounded-full p-2"><i
+                        class="fa-brands fa-telegram"></i> Join Telegram</button>
+            </div>
+        </div>
+        <div class="bottom-footer bg-[#06090c] w-[100%] py-2">
+            <div class="logo w-full flex flex-col justify-center items-center space-y-5 px-5 sm:px-10">
+                <a href="#">
+                    <img src="https://shunliphone.com/wp-content/uploads/2022/04/shunli-logo.png" alt=""
+                        class="w-[150px]">
+                </a>
+                <p
+                    class="font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] text-[#fff] font-medium">
+                    ShunLi Phone Shop, your trusted phone shop in Phnom Penh selling and buying all kinds of new or used
+                    phones, tablets, smart watches, electronic devices, and accessories.</p>
+            </div>
+            <div class="line w-full h-[2px] bg-[#fff] mt-10 md:mt-10"></div>
+            <div class="contact p-5 sm:p-10 flex flex-col md:flex-row justify-between gap-5">
+                <div class="text-[#fff] w-[100%] md:w-[35%]">
+                    <h1
+                        class="font-bold font-[Montserrat,hanuman,Sans-serif] text-[23px] sm:text-3xl text-[#fff] shadow-black">
+                        Meas Mom Phone Shop</h1>
+                    <div
+                        class="address font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] text-[#fff] font-medium mt-5 leading-10">
+                        <i class="fa-solid fa-location-dot"></i> ផ្ទះលេខ​​ ២៩៨E0, មហាវិថី​ ម៉ៅសេទុង (St,245)
+                        ខាងលិចចេនឡាផ្សារដើមគរ</div>
+                    <div
+                        class="font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] text-[#fff] font-medium mt-3">
+                        <i class="fa-solid fa-phone"></i> 0963904112</div>
+                    <div
+                        class="email font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] text-[#fff] font-medium mt-3">
+                        <i class="fa-solid fa-envelope"></i> mrounit83@gmail.com</div>
+                </div>
+
+                <div class="text-[#fff] w-[100%] md:w-[35%]">
+                    <h1
+                        class="font-bold font-[Montserrat,hanuman,Sans-serif] text-[23px] sm:text-3xl text-[#fff] shadow-black">
+                        Payment With:</h1>
+                    <div class="bank mt-5 flex flex-wrap gap-3">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/KHQR-available-here-logo-with-bg-1024x422-1.png"
+                            alt="" class="w-[90px] h-[45px]">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/ABA.png" alt=""
+                            class="w-[50px] h-[45px]">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/Hattha.png" alt=""
+                            class="w-[50px] h-[45px]">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/Huione.png" alt=""
+                            class="w-[50px] h-[45px]">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/Acleda.png" alt=""
+                            class="w-[150px] h-[40px]">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/Chipmong.png" alt=""
+                            class="w-[150px] h-[40px]">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/Wing.png" alt=""
+                            class="w-[150px] h-[40px]">
+                    </div>
+                </div>
+
+                <div class="text-[#fff] w-[100%] md:w-[23%]">
+                    <h1
+                        class="font-bold font-[Montserrat,hanuman,Sans-serif] text-[23px] sm:text-3xl text-[#fff] shadow-black">
+                        Contact Us</h1>
+                    <div
+                        class="messenger font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] text-[#fff] font-medium mt-5">
+                        <i class="fa-brands fa-facebook-messenger"></i> Chat On Messenger</div>
+                    <div
+                        class="telegram font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] text-[#fff] font-medium mt-3">
+                        <i class="fa-brands fa-telegram"></i> Chat On Telegram</div>
+                    <div
+                        class="tik tok font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] text-[#fff] font-medium mt-3">
+                        <i class="fa-brands fa-tiktok"></i> Chat On Tik Tok</div>
+                </div>
+            </div>
+            <!-- <div class="line w-[100%] bg-[#fff] h-[1px] mx-auto"></div> -->
+            <div
+                class="copy-right font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] text-[#fff] font-medium text-center text-[#fff] mt-0 md:mt-5 border-t-2 w-[100%] lg:w-[35%] mx-auto p-2">
+                Copyright © 2024 Angkor Meas Mobile Shop | Website by Azis Web</div>
+        </div>
+    </footer>
+
+    <!-- Floating Telegram Icon Link -->
+    <a href="https://t.me/your_username" target="_blank"
+        class="fixed bottom-4 right-4 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-400 focus:outline-none transition duration-300 ease-in-out block sm:hidden">
+        <!-- Font Awesome Telegram Icon -->
+        <img src="https://static-00.iconduck.com/assets.00/telegram-icon-512x512-4sztjer8.png" alt="" class="w-[40px]">
+    </a>
+
+    <!-- Overlay -->
+    <div class="overlay hidden fixed inset-0 bg-white bg-opacity-80 z-50" id="overlay" onclick="closeSearchBox()"></div>
+
+    <!-- Floating Search Box -->
+    <div class="search-box hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-xl w-11/12 max-w-lg z-50"
+        id="searchBox">
+        <button
+            class="absolute top-2 right-2 bg-[#144194] text-white px-3 py-1 rounded-full hover:bg-red-500 focus:outline-none"
+            onclick="closeSearchBox()">X</button>
+        <input type="text"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Search For Products..." id="searchInput">
+    </div>
+
+    <!-- script link cdn -->
+    <script src="assets/script/jquery-3.7.1.js"></script>
+    <script src="assets/script/script.js"></script>
+    <script src="assets/script/swiper-bundle.min.js"></script>
+    <script src="assets/script/autotyping.js"></script>
+</body>
+
+</html>
