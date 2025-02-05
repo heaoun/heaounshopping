@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Ecommerce Website</title>
+    <!-- tailwind css link cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome link cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <!-- css style link cdn -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- css bubble swiper link -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- google font link cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+   <!-- header -->
+   <header class="header">
+    <div
+        class="top-header w-[100%] bg-[#144194] hidden sm:flex justify-between px-5 py-2 font-[Hanuman,Sans-serif] text-[#fff] sticky top-0 text-[13px]">
+        <div class="flex space-x-5 items-center">
+            <div class="phone-contact flex items-center space-x-2">
+                <i class="fa-solid fa-phone"></i>
+                <p>0963904112</p>
+            </div>
+
+            <div class="email-contact flex items-center space-x-2">
+                <i class="fa-solid fa-envelope"></i>
+                <p>mrounit83@gmail.com</p>
+            </div>
+        </div>
+        <div class="">
+            <a href="" class="flex items-center space-x-2">
+            <i class="fa-brands fa-telegram"></i>
+            <p>Chat On Telegram</p>
+            </a>
+        </div>
+    </div>
+    <!-- end of top header -->
+</header>
+
+<div class="bottom-header flex justify-between items-center px-5 py-1 sticky top-0 lg:static bg-[#fff] z-40 shadow-sm">
+    <div class="left">
+        <div class="logo w-[150px]">
+            <a href="#"><img src="https://soklyphone.com/storage/image-2022-07-02-164325-1656755040dyQxA.jpg"
+                    alt=""></a>
+        </div>
+    </div>
+
+    <div class="right hidden lg:flex items-center space-x-5">
+        <button class="search-box w-[450px] flex items-center space-x-2 border rounded-full p-2 text-lg font-medium"
+            style="border: 2px solid #144194;">
+            <input type="text" placeholder="Search for product..." class="w-full h-fit outline-none">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="shopping-cart text-[#144194] text-xl relative">
+            <a href="cart.html"><i class="fa-solid fa-bag-shopping">
+                <div class="cart-number bg-red-500 w-[20px] h-[20px] rounded-full absolute top-[-3px] left-3 text-white text-[15px] flex justify-center items-center p-2">1</div>
+            </i>
+            </a>
+        </button>
+        <button class="cus-account text-[#144194] text-xl">
+            <a href="account.html"><i class="fa-solid fa-user"></i></a>
+        </button>
+    </div>
+
+    <div class="right-responsive flex lg:hidden items-center space-x-5 text-[20px] sm:text-[25px] md:text-2xl lg:text-2xl xl:text-5xl 2xl:text-2xl font-mono">
+        <button class="shopping-cart text-[#144194] relative">
+            <a href="cart.html">
+                <i class="fa-solid fa-bag-shopping">
+                  <div class="cart-number bg-red-500 w-[20px] h-[20px] rounded-full absolute top-[-3px] left-3 text-white text-[15px] flex justify-center items-center p-2">1</div>
+                </i>
+            </a>
+        </button>
+        <button class="cus-account text-[#144194]">
+            <a href="account.html"><i class="fa-solid fa-user"></i></a>
+        </button>
+        <button class="search text-[#144194]" onclick="toggleSearchBox()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="menu-bar text-[#144194]">
+            <i class="fa-solid fa-bars" id="btnMenu"></i>
+            <i class="fa-solid fa-xmark hidden" id="btnclose"></i>
+        </button>
+    </div>
+</div>
+<!-- end of bottom header -->
+
+<nav class="px-5 py-0 lg:py-3 sticky top-0 bg-[#fff] z-40 shadow-sm">
+    <!-- menu -->
+    <ul
+        class="menu font-[Montserrat,hanuman,Sans-serif] font-bold text-sm text-gray-800 hidden lg:flex justify-center items-center space-x-8 xl:space-x-10 relative z-10">
+        <li class="text-[#144194]"><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#">Brand <i class="fa-solid fa-angle-down"></i></a>
+            <!-- sub-menu -->
+            <ul
+                class="sub-menu absolute grid-cols-2 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 font-medium rounded-md">
+                <li><a href="products.html">Apple</a></li>
+                <li><a href="#">Samsung</a></li>
+                <li><a href="#">Oppo</a></li>
+                <li><a href="#">Vivo</a></li>
+                <li><a href="#">Anker</a></li>
+                <li><a href="#">Jbl</a></li>
+                <li><a href="#">Microsoft</a></li>
+                <li><a href="#">Nokia</a></li>
+                <li><a href="#">Nubia</a></li>
+                <li><a href="#">Oneplus</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Computer <i class="fa-solid fa-angle-down"></i></a>
+            <!-- sub-menu -->
+            <ul
+                class="sub-menu absolute grid-cols-1 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 font-medium rounded-md">
+                <li><a href="#">Macbook</a></li>
+                <li><a href="#">Huawei Laptop</a></li>
+                <li><a href="#">Micfrosoft surface</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Smartphone <i class="fa-solid fa-angle-down"></i></a>
+            <!-- sub-menu -->
+            <ul
+                class="sub-menu absolute grid-cols-2 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 font-medium rounded-md">
+                <li><a href="#">Apple</a></li>
+                <li><a href="#">Samsung</a></li>
+                <li><a href="#">Nothing</a></li>
+                <li><a href="#">Oppo</a></li>
+                <li><a href="#">Vivo</a></li>
+                <li><a href="#">Xoami</a></li>
+                <li><a href="#">Huawei</a></li>
+                <li><a href="#">Hornor</a></li>
+                <li><a href="#">Realme</a></li>
+                <li><a href="#">Techno</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Tablet <i class="fa-solid fa-angle-down"></i></i></a>
+            <!-- sub-menu -->
+            <ul
+                class="sub-menu absolute grid-cols-1 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 font-medium rounded-md">
+                <li><a href="#">Ipad</a></li>
+                <li><a href="#">Galaxy Tab</a></li>
+                <li><a href="#">Huawei Tablet</a></li>
+                <li><a href="#">Xoami Tablet</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Watch <i class="fa-solid fa-angle-down"></i></a>
+            <!-- sub-menu -->
+            <ul
+                class="sub-menu absolute grid-cols-2 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 font-medium rounded-md">
+                <li><a href="#">Apple Watch</a></li>
+                <li><a href="#">Samsung Watch</a></li>
+                <li><a href="#">Huawei Watch</a></li>
+                <li><a href="#">Xoami Watch</a></li>
+                <li><a href="#">Google Watch</a></li>
+                <li><a href="#">Amazfit Watch</a></li>
+                <li><a href="#">Oppo Watch</a></li>
+                <li><a href="#">Nokia</a></li>
+                <li><a href="#">Nubia</a></li>
+                <li><a href="#">Oneplus</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Accessories <i class="fa-solid fa-angle-down"></i></a>
+            <!-- sub-menu -->
+            <ul
+                class="sub-menu absolute grid-cols-2 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 font-medium rounded-md">
+                <li><a href="#">Ipad & Tablet case</a></li>
+                <li><a href="#">Phone case</a></li>
+                <li><a href="#">Other Case</a></li>
+                <li><a href="#">Car Charger</a></li>
+                <li><a href="#">Ear Phone</a></li>
+                <li><a href="#">Headphone</a></li>
+                <li><a href="#">Speaker</a></li>
+                <li><a href="#">Bluetooth Wireless</a></li>
+                <li><a href="#">Adapter & Cable</a></li>
+                <li><a href="#">Powerbank & Battery</a></li>
+            </ul>
+        </li>
+        <li><a href="#">2nd Hand <i class="fa-solid fa-angle-down"></i></a>
+            <!-- sub-menu -->
+            <ul
+                class="sub-menu absolute grid-cols-2 gap-5 bg-gray-200 p-5 shadow-lg hidden text-gray-800 right-5 xl:right-0 font-medium rounded-md">
+                <li><a href="#">Used Iphone</a></li>
+                <li><a href="#">Used Samsung</a></li>
+                <li><a href="#">Used Oppo</a></li>
+                <li><a href="#">Used Vivo</a></li>
+                <li><a href="#">Used Anker</a></li>
+                <li><a href="#">Used Jbl</a></li>
+                <li><a href="#">Used Microsoft</a></li>
+                <li><a href="#">Used Nokia</a></li>
+                <li><a href="#">Used Nubia</a></li>
+                <li><a href="#">Used Oneplus</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<!-- responsive-navbar -->
+<nav class="block lg:hidden">
+    <ul class="menu w-full flex md:hidden justify-center flex-col space-y-3 p-3 left-0 font-[Montserrat,hanuman,Sans-serif] font-medium text-md text-gray-700 bg-white z-30 border-t-2 shadow-xl fixed top-[63px]"
+        id="menu">
+        <li class="w-full"><a href="#">Home</a></li>
+        <li id="btnSubMenu1"><a href="#">Brand</a> <i class="fa-solid fa-angle-down"></i>
+            <ul class="sub-menu  grid-cols-2 bg-gray-200 gap-3 text-gray-800 w-full p-3 grid bg-opacity-50 text-sm"
+                id="sub-menu1">
+                <li><a href="products.html">Apple</a></li>
+                <li><a href="#">Jbl</a></li>
+                <li><a href="#">Samsung</a></li>
+                <li><a href="#">microsoft</a></li>
+                <li><a href="#">Oppo</a></li>
+                <li><a href="#">Vivo</a></li>
+                <li><a href="#">Nokia</a></li>
+                <li><a href="#">Asus</a></li>
+                <li><a href="#">sony</a></li>
+                <li><a href="#">Techno</a></li>
+                <li><a href="#">hornor</a></li>
+                <li><a href="#">infinix</a></li>
+            </ul>
+        </li>
+        <li id="btnSubMenu2"><a href="#">Computer</a> <i class="fa-solid fa-angle-down"></i>
+            <ul class="sub-menu  grid-cols-1 bg-gray-200 gap-3 text-gray-800 w-full p-3 grid bg-opacity-50 text-sm"
+                id="sub-menu2">
+                <li><a href="#">Macbook</a></li>
+                <li><a href="#">Huawei Laptop</a></li>
+                <li><a href="#">Micosoft Surface</a></li>
+            </ul>
+        </li>
+        <li id="btnSubMenu3"><a href="#">Smartphone</a> <i class="fa-solid fa-angle-down"></i>
+            <ul class="sub-menu  grid-cols-2 bg-gray-200 gap-3 text-gray-800 w-full p-3 grid bg-opacity-50 text-sm"
+                id="sub-menu3">
+                <li><a href="#">Apple</a></li>
+                <li><a href="#">Jbl</a></li>
+                <li><a href="#">Samsung</a></li>
+                <li><a href="#">microsoft</a></li>
+                <li><a href="#">Oppo</a></li>
+                <li><a href="#">Vivo</a></li>
+                <li><a href="#">Nokia</a></li>
+                <li><a href="#">Asus</a></li>
+                <li><a href="#">sony</a></li>
+                <li><a href="#">Techno</a></li>
+                <li><a href="#">hornor</a></li>
+                <li><a href="#">infinix</a></li>
+            </ul>
+        </li>
+        <li id="btnSubMenu4"><a href="#">Tablet</a> <i class="fa-solid fa-angle-down"></i>
+            <ul class="sub-menu grid-cols-1 bg-gray-200 gap-3 text-gray-800 w-full p-3 grid bg-opacity-50 text-sm"
+                id="sub-menu4">
+                <li><a href="#">iPad</a></li>
+                <li><a href="#">Galaxy Tabs</a></li>
+                <li><a href="#">Huawei Tablets</a></li>
+                <li><a href="#">Xiaomi Tablet</a></li>
+            </ul>
+        </li>
+        <li id="btnSubMenu5"><a href="#">Watch</a> <i class="fa-solid fa-angle-down"></i>
+            <ul class="sub-menu grid-cols-1 bg-gray-200 gap-3 text-gray-800 w-full p-3 grid bg-opacity-50 text-sm"
+                id="sub-menu5">
+                <li><a href="#">Apple Watch</a></li>
+                <li><a href="#">Samsung Watch</a></li>
+                <li><a href="#">Huawei Watch</a></li>
+                <li><a href="#">Xoami Watch</a></li>
+                <li><a href="#">Google Watch</a></li>
+                <li><a href="#">Amazfit Watch</a></li>
+                <li><a href="#">Oppo Watch</a></li>
+            </ul>
+        </li>
+        <li id="btnSubMenu6"><a href="#">Accessories</a> <i class="fa-solid fa-angle-down"></i>
+            <ul class="sub-menu grid-cols-2 bg-gray-200 gap-3 text-gray-800 w-full p-3 grid bg-opacity-50 text-sm"
+                id="sub-menu6">
+                <li><a href="#">Ipad & Tablet case</a></li>
+                <li><a href="#">Phone case</a></li>
+                <li><a href="#">Other Case</a></li>
+                <li><a href="#">Car Charger</a></li>
+                <li><a href="#">Ear Phone</a></li>
+                <li><a href="#">Headphone</a></li>
+                <li><a href="#">Speaker</a></li>
+                <li><a href="#">Bluetooth Wireless</a></li>
+                <li><a href="#">Adapter & Cable</a></li>
+                <li><a href="#">Powerbank & Battery</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<!-- end of responsive-navbar -->
+<!-- end of header -->
+
+    <main class="max-w-[90%] sm:max-w-[90%] md:max-w-[90%] lg:max-w-[90%] xl:max-w-[80%] 2xl:max-w-[80%] m-auto grid grid-cols-[100%] lg:grid-cols-[350px,1fr] gap-[2rem] lg:gap-[5rem] items-start">
+        <div class="pro-img-detail static lg:sticky top-[5rem] w-full">
+          <div class="main-img overflow-hidden rounded-xl w-full">
+            <img src="https://soklyphone.com/storage/Honor/Honor-Pad-X8a/1-17332981339izwY.png" alt="" class="w-full lg:w-[500px] h-auto lg:h-[300px]" id="zoom">
+          </div>
+          
+          <!-- pro-detail-slider -->
+          <div class="slide-container swiper">
+            <div class="slide-content">
+                <div class="more-img card-wrapper swiper-wrapper">
+                    
+                    <div class="active-box-img child-img swiper-slide">
+                        <img src="https://soklyphone.com/storage/Honor/Honor-Pad-X8a/1-17332981339izwY.png" alt="" class="card-img">
+                    </div>
+                   
+                    <div class="child-img swiper-slide">
+                      <img src="https://soklyphone.com/storage/Honor/Honor-Pad-X8a/2-1733298134Skx21.png" alt="" class="card-img">
+                    </div>
+
+                    <div class="child-img swiper-slide">
+                    <img src="https://soklyphone.com/storage/Honor/Honor-Pad-X8a/3-1733298135QgjLZ.png" alt="" class="card-img">
+                    </div>
+
+                    <div class="child-img swiper-slide">
+                    <img src="https://soklyphone.com/storage/Honor/Honor-Pad-X8a/5-173329813669f1x.png" alt="" class="card-img">
+                    </div>
+                    
+                </div>
+            </div>
+        
+            <div class="swiper-button-next swiper-navBtn text-gray-700"></div>
+            <div class="swiper-button-prev swiper-navBtn text-gray-700"></div>
+            <!-- <div class="swiper-pagination"></div> -->
+          </div>
+
+        </div>
+      
+        <div class="pro-detail mt-0 lg:mt-5">
+          <div>
+            <div class="head">
+                <h1 class="font-bold font-[Montserrat,hanuman,Sans-serif] text-[18px] sm:text-[23px] text-gray-700 shadow-black">Used Galaxy Z Fold 6 256G+12G (99%) Global SIM2</h1>
+            </div>
+
+            <div class="line w-full h-[1px] bg-[#144194] rounded-xl mt-3"></div>
+
+            <div class="price font-[Poppins,hanuman,Sans-serif] text-2xl md:text-4xl text-[#f34770!important] font-semibold mt-5 sm:mt-10">$ 1,165</div>
+            <div class="contact-us flex flex-col font-[Poppins,hanuman,Sans-serif] text-sm sm:text-md font-semibold mt-5 md:mt-8 space-y-3 text-[#144194]">
+                <a href="#"><i class="fa-brands fa-telegram"></i> Chat Via Telegram</a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i> Chat Via Whatsapp</a>
+                <a href="#"><i class="fa-solid fa-phone"></i> Call Now: 0963904112</a>
+            </div>
+            <div class="btn mt-5 flex items-center space-x-5">
+                <div><input type="number" id="inputValue" value="0" min="0" step="1" class="w-[70px] text-center border border-gray-300 rounded-lg p-1 sm:p-2 font-semibold"></div>
+                <button class="bg-blue-500 text-white py-1 sm:py-2 px-3 sm:px-5 rounded-full font-semibold"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+            </div>
+            <div class="category font-[Poppins,hanuman,Sans-serif] flex items-baseline lg:items-center space-x-3 mt-5 w-full">
+                <h1 class="font-semibold text-gray-700 text-sm sm:text-lg">Category</h1>
+                <h3 class="font-medium text-gray-700 text-[10px] sm:text-sm">2nd Hand Mobiles, Used Samsung</h3>
+            </div>
+            <div class="btn mt-5 flex items-center space-x-5">
+                <button class="text-blue-800 rounded-full font-semibold"><i class="fa-regular fa-heart"></i> Add to favorite</button>
+                <button class="text-blue-800 rounded-full font-semibold"><i class="fa-brands fa-facebook"></i> Share to facebook</button>
+            </div>
+          </div>
+          <div class="specification w-full border rounded-xl mt-5 p-1 bg-opacity-30">
+            <table class="table-auto w-full">
+                <tbody class="font-[Roboto,hanuman,Sans-serif]">
+                  <!-- NETWORK -->
+                  <tr class="border-b">
+                    <th class="text-left font-bold p-3 text-blue-700 text-lg">NETWORK</th>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Technology</td>
+                    <td class="p-3 text-gray-700">GSM / CDMA / HSPA / EVDO / LTE / 5G</td>
+                  </tr>
+
+                  <!-- LAUNCH -->
+                  <tr class="border-b">
+                    <th class="text-left font-bold p-3 text-blue-700 text-lg">LAUNCH</th>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Announced</td>
+                    <td class="p-3 text-gray-700">2024, September 09</td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Status</td>
+                    <td class="p-3 text-gray-700">Coming soon. Exp. release 2024, September 20</td>
+                  </tr>
+
+                  <!-- BODY -->
+                  <tr class="border-b">
+                    <th class="text-left font-bold p-3 text-blue-700 text-lg">BODY</th>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Dimensions</td>
+                    <td class="p-3 text-gray-700">163 x 77.6 x 8.3 mm (6.42 x 3.06 x 0.33 in)</td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Weight</td>
+                    <td class="p-3 text-gray-700">227 g (8.01 oz)</td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Build</td>
+                    <td class="p-3 text-gray-700">
+                      Glass front (Corning-made glass), glass back (Corning-made glass),
+                      titanium frame (grade 5)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">SIM</td>
+                    <td class="p-3 text-gray-700">
+                      Nano-SIM and eSIM – International<br>
+                      Dual SIM with multiple numbers – USA<br>
+                      Dual SIM (Nano-SIM, dual stand-by) – China
+                    </td>
+                  </tr>
+
+                  <!-- display -->
+                  <tr class="border-b">
+                    <th class="text-left font-bold p-3 text-blue-700 text-lg">Display</th>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Type</td>
+                    <td class="p-3 text-gray-700">Super AMOLED, 120Hz, 1000 nits (HBM)</td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Size</td>
+                    <td class="p-3 text-gray-700">6.5 inches, 103.7 cm2 (~84.2% screen-to-body ratio)</td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Resolution</td>
+                    <td class="p-3 text-gray-700">
+                        1080 x 2340 pixels, 19.5:9 ratio (~396 ppi density)
+                    </td>
+                  </tr>
+
+                  <!-- platform -->
+                  <tr class="border-b">
+                    <th class="text-left font-bold p-3 text-blue-700 text-lg">Platform</th>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">OS</td>
+                    <td class="p-3 text-gray-700">Android 14, One UI 6</td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Chipset</td>
+                    <td class="p-3 text-gray-700">Exynos 1280 (5 nm)</td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">CPU</td>
+                    <td class="p-3 text-gray-700">
+                        Octa-core (2x2.4 GHz Cortex-A78 & 6x2.0 GHz Cortex-A55)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">GPU</td>
+                    <td class="p-3 text-gray-700">
+                        Mali-G68
+                    </td>
+                  </tr>
+
+                  <!-- memory -->
+                  <tr class="border-b">
+                    <th class="text-left font-bold p-3 text-blue-700 text-lg">Memory</th>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">CardSlot</td>
+                    <td class="p-3 text-gray-700">microSDXC (uses shared SIM slot)</td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Internal</td>
+                    <td class="p-3 text-gray-700">258GB 8GB RAM</td>
+                  </tr>
+
+                  <!-- camera -->
+                  <tr class="border-b">
+                    <th class="text-left font-bold p-3 text-blue-700 text-lg">Camera</th>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Primary</td>
+                    <td class="p-3 text-gray-700">50 MP, f/1.8, (wide), PDAF, OIS
+                        ,8 MP, f/2.2, 120Ë (ultrawide)
+                        ,2 MP, f/2.4, (macro)
+                        </td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Features</td>
+                    <td class="p-3 tex-gray-700">LED flash, panorama, HDR</td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Video</td>
+                    <td class="p-3 text-gray-700">4K@30fps, 1080p@30fps, gyro-EIS</td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Secondary</td>
+                    <td class="p-3 text-gray-700">Modules : 13 MP, f/2.2, (wide) 1080p@30fps
+                        </td>
+                  </tr>
+
+                  <!-- sound -->
+                  <tr class="border-b">
+                    <th class="text-left font-bold p-3 text-blue-700 text-lg">Sound</th>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Loudspeaker</td>
+                    <td class="p-3 text-gray-700">
+                        Yes, with stereo speakers
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">3.5mmjack</td>
+                    <td class="p-3 text-gray-700">
+                        Yes
+                    </td>
+                  </tr>
+                  <tr>
+
+                  <!-- comms -->
+                  <tr class="border-b">
+                    <th class="text-left font-bold p-3 text-blue-700 text-lg">Comms</th>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">WLAN</td>
+                    <td class="p-3 text-gray-700">
+                        Wi-Fi 802.11 a/b/g/n/ac, dual-band, Wi-Fi Direct
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Bluetooth</td>
+                    <td class="p-3 text-gray-700">
+                        5.3, A2DP, LE
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">USB</td>
+                    <td class="p-3 text-gray-700">
+                        USB Type-C 2.0
+                    </td>
+                  </tr>
+
+                   <!-- feature -->
+                   <tr class="border-b">
+                    <th class="text-left font-bold p-3 text-blue-700 text-lg">Feature</th>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Sensors</td>
+                    <td class="p-3 text-gray-700">
+                        Fingerprint (side-mounted), accelerometer, gyro, compass, Virtual proximity sensing
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Bluetooth</td>
+                    <td class="p-3 text-gray-700">
+                        5.3, A2DP, LE
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">USB</td>
+                    <td class="p-3 text-gray-700">
+                        USB Type-C 2.0
+                    </td>
+                  </tr>
+
+                   <!-- battery -->
+                   <tr class="border-b">
+                    <th class="text-left font-bold p-3 text-blue-700 text-lg">Battery</th>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Battery</td>
+                    <td class="p-3 text-gray-700">
+                        5000 mAh, non-removable
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Charging</td>
+                    <td class="p-3 text-gray-700">
+                        25W wired
+                    </td>
+                  </tr>
+
+                   <!-- misc -->
+                   <tr class="border-b">
+                    <th class="text-left font-bold p-3 text-blue-700 text-lg">Misc</th>
+                  </tr>
+                  <tr>
+                    <td class="text-gray-800 font-medium p-3">Colors</td>
+                    <td class="p-3 text-gray-700">
+                        Blue Blackâ , Blue
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+          </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-60">
+        
+        <div class="waves relative z-10">
+            <div class="wave" id="wave1"></div>
+            <!-- <div class="wave" id="wave2"></div> -->
+            <!-- <div class="wave" id="wave3"></div> -->
+            <!-- <div class="wave" id="wave4"></div> -->
+        </div>
+
+        <div
+            class="top-footer bg-[#144194] p-5 sm:p-10 w-[100%] flex-col md:flex-row flex justify-between items-start md:items-center space-y-3 md:space-y-0">
+            <div class="tittle space-y-3">
+                <h1
+                    class="font-bold font-[Montserrat,hanuman,Sans-serif] text-[23px] sm:text-2xl text-[#fff] shadow-black">
+                    Stay Updated With Our Latest Price & Offers!</h1>
+                <p
+                    class="font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[13px] 2xl:text-[13px] text-[#fff] font-medium">
+                    Be the first to know about our latest stock and price, like our Facebook page or join our telegram
+                    channel </p>
+            </div>
+            <div class="btn space-x-0 xl:space-x-2 space-y-3">
+                <button
+                    class="fb-btn text-gray-800 font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] font-medium bg-[#fff] rounded-full p-2"><i
+                        class="fa-brands fa-facebook"></i> Like Facebook</button>
+                <button
+                    class="tele-btn text-gray-800 font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[16px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] font-medium bg-[#fff] rounded-full p-2"><i
+                        class="fa-brands fa-telegram"></i> Join Telegram</button>
+            </div>
+        </div>
+        <div class="bottom-footer bg-[#06090c] w-[100%] py-2">
+            <div class="logo w-full flex flex-col justify-center items-center space-y-5 px-5 sm:px-10">
+                <a href="#">
+                    <img src="https://shunliphone.com/wp-content/uploads/2022/04/shunli-logo.png" alt=""
+                        class="w-[150px]">
+                </a>
+                <p
+                    class="font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[15px] md:text-[15px] lg:text-[15px] xl:text-[15px] 2xl:text-[15px] text-[#fff] font-medium text-center">
+                    ShunLi Phone Shop, your trusted phone shop in Phnom Penh selling and buying all kinds of new or used
+                    phones, tablets, smart watches, electronic devices, and accessories.</p>
+            </div>
+            <div class="line w-full h-[2px] bg-[#fff] mt-10 md:mt-10"></div>
+            <div class="contact p-5 sm:p-5 flex flex-col md:flex-row justify-between gap-5">
+                <div class="text-[#fff] w-[100%] md:w-[35%]">
+                    <h1
+                        class="font-bold font-[Montserrat,hanuman,Sans-serif] text-[23px] sm:text-2xl text-[#fff] shadow-black">
+                        Meas Mom Phone Shop</h1>
+                    <div
+                        class="address font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[14px] md:text-[14px] lg:text-[14px] xl:text-[14px] 2xl:text-[14px] text-[#fff] font-medium mt-5 leading-10">
+                        <i class="fa-solid fa-location-dot"></i> ផ្ទះលេខ​​ ២៩៨E0, មហាវិថី​ ម៉ៅសេទុង (St,245)
+                        ខាងលិចចេនឡាផ្សារដើមគរ
+                    </div>
+                    <div
+                        class="font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[14px] md:text-[14px] lg:text-[14px] xl:text-[14px] 2xl:text-[14px] text-[#fff] font-medium mt-3">
+                        <i class="fa-solid fa-phone"></i> 0963904112
+                    </div>
+                    <div
+                        class="email font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[14px] md:text-[14px] lg:text-[14px] xl:text-[14px] 2xl:text-[14px] text-[#fff] font-medium mt-3">
+                        <i class="fa-solid fa-envelope"></i> mrounit83@gmail.com
+                    </div>
+                </div>
+
+                <div class="text-[#fff] w-[100%] md:w-[35%]">
+                    <h1
+                        class="font-bold font-[Montserrat,hanuman,Sans-serif] text-[23px] sm:text-2xl text-[#fff] shadow-black">
+                        Payment With</h1>
+                    <div class="bank mt-5 flex flex-wrap gap-3">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/KHQR-available-here-logo-with-bg-1024x422-1.png"
+                            alt="" class="w-[90px] h-[45px]">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/ABA.png" alt=""
+                            class="w-[50px] h-[45px]">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/Hattha.png" alt=""
+                            class="w-[50px] h-[45px]">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/Huione.png" alt=""
+                            class="w-[50px] h-[45px]">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/Acleda.png" alt=""
+                            class="w-[150px] h-[40px]">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/Chipmong.png" alt=""
+                            class="w-[150px] h-[40px]">
+                        <img src="https://angkormeas.com/wp-content/uploads/2023/10/Wing.png" alt=""
+                            class="w-[150px] h-[40px]">
+                    </div>
+                </div>
+
+                <div class="text-[#fff] w-[100%] md:w-[23%]">
+                    <h1
+                        class="font-bold font-[Montserrat,hanuman,Sans-serif] text-[23px] sm:text-2xl text-[#fff] shadow-black">
+                        Contact Us</h1>
+                    <div
+                        class="messenger font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[14px] md:text-[14px] lg:text-[14px] xl:text-[14px] 2xl:text-[14px] text-[#fff] font-medium mt-5">
+                        <a href="#"><i class="fa-brands fa-facebook-messenger"></i> Chat On Messenger</a>
+                    </div>
+                    <div
+                        class="telegram font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[14px] md:text-[14px] lg:text-[14px] xl:text-[14px] 2xl:text-[14px] text-[#fff] font-medium mt-3">
+                        <a href="#"><i class="fa-brands fa-telegram"></i> Chat On Telegram</a>
+                    </div>
+                    <div
+                        class="tik tok font-[Poppins,hanuman,Sans-serif] text-[13px] sm:text-[14px] md:text-[14px] lg:text-[14px] xl:text-[14px] 2xl:text-[14px] text-[#fff] font-medium mt-3">
+                        <a href="#"><i class="fa-brands fa-tiktok"></i> Chat On Tik Tok</a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="line w-[100%] bg-[#fff] h-[1px] mx-auto"></div> -->
+            <div
+                class="copy-right font-[Poppins,hanuman,Sans-serif] text-[10px] sm:text-[12px] md:text-[12px] lg:text-[12px] xl:text-[12px] 2xl:text-[12px] font-medium text-center text-[#fff] mt-0 md:mt-5 border-t-2 w-[100%] lg:w-[35%] mx-auto p-2">
+                Copyright © 2024 Angkor Meas Mobile Shop | Website by Azis Web</div>
+        </div>
+    </footer>
+    
+    <!-- Floating Telegram Icon Link -->
+    <a href="https://t.me/your_username" target="_blank"
+        class="fixed bottom-4 right-4 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-400 focus:outline-none transition duration-300 ease-in-out block sm:hidden">
+        <!-- Font Awesome Telegram Icon -->
+        <img src="https://static-00.iconduck.com/assets.00/telegram-icon-512x512-4sztjer8.png" alt="" class="w-[40px]">
+    </a>
+
+    <!-- Overlay -->
+    <div class="overlay hidden fixed inset-0 bg-white bg-opacity-80 z-50" id="overlay" onclick="closeSearchBox()"></div>
+
+    <!-- Floating Search Box -->
+    <div class="search-box hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-xl w-11/12 max-w-lg z-50"
+        id="searchBox">
+        <button
+            class="absolute top-2 right-2 bg-[#144194] text-white px-3 py-1 rounded-full hover:bg-red-500 focus:outline-none"
+            onclick="closeSearchBox()">X</button>
+        <input type="text"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Search For Products..." id="searchInput">
+    </div>
+
+    <!-- script link cdn -->
+    <script src="assets/script/jquery-3.7.1.js"></script>
+    <script src="assets/script/swiper-bundle.min.js"></script>
+    <script src="assets/script/autotyping.js"></script>
+    <script src="assets/script/zoomsl.min.js"></script>
+    <script src="assets/script/script.js"></script>
+</body>
+
+</html>
